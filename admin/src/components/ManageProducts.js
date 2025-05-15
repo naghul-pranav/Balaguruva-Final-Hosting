@@ -18,7 +18,7 @@ const ManageProducts = () => {
 
   const fetchProducts = async () => {
   try {
-    const res = await fetch("http://localhost:5000/api/products");
+    const res = await fetch("https://balaguruva-final-hosting.onrender.com/api/products");
     if (!res.ok) throw new Error("Failed to fetch products");
     const data = await res.json();
     setProducts(data);
@@ -96,7 +96,7 @@ const ManageProducts = () => {
   }
 
   try {
-    const res = await fetch(`http://localhost:5000/api/products/${editingProduct}`, {
+    const res = await fetch(`https://balaguruva-final-hosting.onrender.com/api/products/${editingProduct}`, {
       method: "PUT",
       body: form,
     });
@@ -122,7 +122,7 @@ const ManageProducts = () => {
   };
 
   const confirmDelete = async () => {
-    const res = await fetch(`http://localhost:5000/api/products/${productToDelete}`, {
+    const res = await fetch(`https://balaguruva-final-hosting.onrender.com/api/products/${productToDelete}`, {
       method: "DELETE",
     });
     if (res.ok) {
